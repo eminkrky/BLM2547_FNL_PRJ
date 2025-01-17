@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Merhaba, Ben Muhammet</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="index.html" class="active">Anasayfa</a>
+        <a href="hakkimda.html">Hakkımda</a>
+        <a href="projelerim.html">Projelerim</a>
+        <a href="blog.html">Blog</a>
+        <a href="iletisim.html">İletişim</a>
+      </nav>
+    </header>
+
+    <section
+      class="hero"
+      style="background-color: #e9ecef; padding: 3em 1em; text-align: center"
+    >
+      <div class="hero-content">
+        <h1 style="color: #333">
+          Merhaba, ben
+          <span class="highlight">Muhammet</span>
+        </h1>
+        <p
+          style="
+            color: #555;
+            font-size: 1.2em;
+            max-width: 600px;
+            margin: 1em auto;
+          "
+        >
+          Bilgisayar mühendisliği öğrencisi ve yazılım geliştiriciyim. Web ve
+          mobil uygulama geliştirme konularında çalışıyorum.
+        </p>
+        <img
+          src="profil.jpg"
+          alt="Profil Fotoğrafı"
+          class="profil-foto"
+          style="
+            border: 4px solid #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+          "
+        />
+      </div>
+    </section>
+
+    <section class="yetenekler-ve-projeler">
+      <div class="butonlar">
+        <button class="btn" onclick="showContent('skills')">Yetenekler</button>
+        <button class="btn" onclick="showContent('projects')">Projeler</button>
+        <button class="btn" onclick="showContent('blog')">Blog</button>
+        <button class="btn" onclick="showContent('contact')">İletişim</button>
+      </div>
+    </section>
+
+    <section id="skills" class="container yetenekler" style="display: none">
+      <h2>Yeteneklerim</h2>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <h3>Programlama Dilleri</h3>
+          <p>Java, Swift, Python</p>
+        </div>
+        <div class="skill-card">
+          <h3>Web Geliştirme</h3>
+          <p>HTML, CSS, JavaScript</p>
+        </div>
+        <div class="skill-card">
+          <h3>Mobil Uygulama</h3>
+          <p>iOS (Swift), Android (Java)</p>
+        </div>
+        <div class="skill-card">
+          <h3>Diğer Araçlar</h3>
+          <p>Git, Figma, Xcode</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="container projeler" style="display: none">
+      <h2>Son Projelerim</h2>
+      <div class="project-grid">
+        <div class="project-card">
+          <h3>iOS Oyun</h3>
+          <p>SpriteKit kullanılarak tasarlanan bir mobil oyun.</p>
+        </div>
+        <div class="project-card">
+          <h3>Web Portföy</h3>
+          <p>Responsive ve modern bir web sitesi tasarımı.</p>
+        </div>
+        <div class="project-card">
+          <h3>Python Telegram Bot</h3>
+          <p>Otomatik mesajlaşma ve veri analizi için bir bot.</p>
+        </div>
+      </div>
+      <a href="projelerim.html" class="btn">Tüm Projeler</a>
+    </section>
+
+    <section id="blog" class="container blog" style="display: none">
+      <h2>Blog</h2>
+      <div class="blog-grid">
+        <div class="blog-post">
+          <h3>Yazılımda Sürekli Öğrenme</h3>
+          <p>Yazılım geliştirme dünyasında güncel kalmanın yolları.</p>
+          <a href="blog.html" class="btn">Devamını Oku</a>
+        </div>
+        <div class="blog-post">
+          <h3>Python'da Veri Analizi</h3>
+          <p>Python ile hızlı ve etkili veri analizi teknikleri.</p>
+          <a href="blog.html" class="btn">Devamını Oku</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="container iletisim" style="display: none">
+      <h2>İletişime Geç</h2>
+      <p>
+        Bana ulaşmak isterseniz aşağıdaki sosyal medya hesaplarımı
+        kullanabilirsiniz.
+      </p>
+      <div class="social-links">
+        <a href="https://github.com/" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
+        <a href="https://twitter.com/" target="_blank">Twitter</a>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2024 Muhammet. Tüm hakları saklıdır.</p>
+    </footer>
+
+    <script>
+      function showContent(section) {
+        const sections = ["skills", "projects", "blog", "contact"];
+        sections.forEach((id) => {
+          document.getElementById(id).style.display =
+            id === section ? "block" : "none";
+        });
+
+        document.querySelectorAll(".butonlar .btn").forEach((btn) => {
+          btn.classList.remove("active-btn");
+        });
+        document
+          .querySelector(`button[onclick="showContent('${section}')"]`)
+          .classList.add("active-btn");
+      }
+    </script>
+  </body>
+</html>
